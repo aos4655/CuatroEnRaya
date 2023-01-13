@@ -47,6 +47,7 @@ public class TableroTest {
 	public void estaLlenoCompruebaCorrectamente() {
 		Tablero tablero = new Tablero();
 		assertThat(TABLERO_NO_DEBERIA_ESTAR_LLENO, tablero.estaLleno(), is(false));
+		
 		try {
 			for (int columna = 0; columna < Tablero.COLUMNAS; columna++) {
 				llenarColumna(tablero, columna, Ficha.AZUL);
@@ -231,7 +232,9 @@ public class TableroTest {
 			assertThat(OBJETIVO_NO_ALCANZADO, tablero.introducirFicha(0, Ficha.VERDE), is(false));
 			assertThat(OBJETIVO_NO_ALCANZADO, tablero.introducirFicha(0, Ficha.VERDE), is(false));
 			assertThat(OBJETIVO_NO_ALCANZADO, tablero.introducirFicha(0, Ficha.VERDE), is(false));
+			System.out.println(tablero.toString());
 			assertThat(OBJETIVO_ALCANZADO, tablero.introducirFicha(0, Ficha.AZUL), is(true));
+			System.out.println(tablero.toString());
 		} catch (OperationNotSupportedException e) {
 			fail(NO_EXCEPCION);
 		}

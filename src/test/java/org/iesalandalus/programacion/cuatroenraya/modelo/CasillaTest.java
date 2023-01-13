@@ -60,7 +60,7 @@ public class CasillaTest {
 	}
 	
 	@Test
-	public void ponerFichaCasillaOcupadaLanzaExcepcion() {
+	public void ponerFichaCasillaOcupadaLanzaExcepcion()  {
 		Casilla casilla = new Casilla();
 		try {
 			casilla.setFicha(Ficha.AZUL);
